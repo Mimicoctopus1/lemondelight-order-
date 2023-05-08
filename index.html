@@ -4,8 +4,99 @@
         <meta charset="utf-8">
         <title>Lemon Delight.Order</title>
     </head>
+    <style>
+        #MENU-BAR-CSS{}
+        .menu-bar {
+            color: rgba(0, 0, 0, 0);
+            background-color: rgba(255, 255, 0, 0.5);
+            font-size: 50px;
+            position: fixed;
+            top: -50px;
+            left: 0px;
+        }
+        
+        .homepage-link {
+            font-family: cursive;
+            position: fixed;
+            top: -4%;
+            left: 10px;
+        }
+        
+        .order-link {
+            font-family: "arial", monospace;
+            position: fixed;
+            top: -3%;
+            right: 10px;
+        }
+        
+        .questions-link {
+            font-family: "arial", monospace;
+            font-size: 30px;
+            position: fixed;
+            top: -5%;
+            right: 140px;
+        }
+        
+        .wait-bar {
+            width: 500px;
+            height: 100px;
+        }
+    </style>
     <body>
-
-
+        <div>
+            <h2 id = "top" class = "menu-bar">
+                ______________________________________________________________________________________________________________________________________________________________
+            </h2>
+            <h2 class = "homepage-link">
+                <a href = "https://mimicoctopus1.github.io/lemondelight">Lemon Delight</a>
+            </h2>
+            <h2 class = "questions-link">
+                <a href = "#questions">?</a>
+            </h2>
+            <h2 class = "order-link">
+                <a>
+                    ORDER
+                </a>
+            </h2>
+        </div>    
+        <br>
+        <h1>
+            Estimated Wait Time: <span class = "wait-time">Loading...</span><br><span class = "wait-time">Loading...</span><span class = "wait-time"> Loading...</span>
+        </h1>
+        <h3>The bar below shows the Estimated Wait Time in the range of 0 to <span class = "max-wait-time">20</span> minutes.</h3>
+        <p>Note that all the time information on this page was last checked as of when this page was opened. If not <a href = "https://mimicoctopus1.github.io/lemondelight.order/">reload</a>ed, this page may result in false information.</p>
+        <meter min = "0" max = "20" high = "15" low = "5" optimum = "0" value = "0" class = "wait-bar"></meter>
+        <div class = "message"></div>
+        
+        
+        <script>
+            var message = document.getElementsByClassName("message")[0];
+            var wait_meter = document.getElementsByClassName("wait-time");
+            var waitBar = document.getElementsByClassName("wait-bar")[0];
+            var peopleInLine = 20;
+            var subtractedTime = 0;
+            var calculateWaitTime = function() {
+                subtractedTime += 1;
+                wait_meter[0].innerHTML = (peopleInLine * 60) - subtractedTime + " seconds";
+                wait_meter[2].innerHTML = " and " + (parseFloat(wait_meter[0].innerHTML) - ((peopleInLine - subtractedTimeInMin) * 60)) + " seconds";
+                if((parseFloat(wait_meter[0].innerHTML) - ((peopleInLine - subtractedTimeInMin) * 60)) < 0) {
+                    wait_meter[2].innerHTML = " and 59 seconds";
+                }
+            }
+            var subtractedTimeInMin = 0;
+            var calculateWaitTimeInMin = function() {
+                subtractedTimeInMin += 1;
+                wait_meter[1].innerHTML = "AKA " + (peopleInLine - subtractedTimeInMin) + " minutes";
+                
+            }
+            var updateBar = function() {
+                waitBar.value = peopleInLine - subtractedTime/60;
+            }
+            var time1 = window.setInterval(calculateWaitTime, 1000);
+            var time2 = window.setInterval(calculateWaitTimeInMin, 60000);
+            var timerUpdateBar = window.setInterval(updateBar, 100)
+            calculateWaitTime();
+            calculateWaitTimeInMin();
+        </script>
     </body>
 </html>
