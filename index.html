@@ -26,7 +26,7 @@
             font-family: "arial", monospace;
             position: fixed;
             top: -3%;
-            right: 10px;
+            right: 50px;
         }
         
         .questions-link {
@@ -34,7 +34,7 @@
             font-size: 30px;
             position: fixed;
             top: -5%;
-            right: 140px;
+            right: 180px;
         }
         
         .wait-bar {
@@ -55,7 +55,7 @@
                 <a href = "#questions">?</a>
             </h2>
             <h2 class = "order-link">
-                <a>
+                <a href = "https://mimicoctopus1.github.io/lemondelight.order/">
                     ORDER
                 </a>
             </h2>
@@ -88,6 +88,11 @@
                 wait_meter[2].innerHTML = " and " + (parseFloat(wait_meter[0].innerHTML) - ((peopleInLine - subtractedTimeInMin) * 60)) + " seconds";
                 if((parseFloat(wait_meter[0].innerHTML) - ((peopleInLine - subtractedTimeInMin) * 60)) < 0) {
                     wait_meter[2].innerHTML = " and 59 seconds";
+                }
+                if(parseFloat(wait_meter[0].innerHTML) <= 0){
+                    wait_meter[0].innerHTML = "0 seconds";
+                    wait_meter[1].innerHTML = "AKA 0 minutes";
+                    wait_meter[2].innerHTML = " and 0 seconds.";
                 }
             }
             var subtractedTimeInMin = 0;
