@@ -1,10 +1,24 @@
 <!DOCTYPE html>
+<!--If the iframe doesn't show and you're here on KA, it's okay. iframes aren't allowed, but I didn't really care because I'm just using KA for Oh Noes, autocomplete, and the quickly loading previews. Speaking of Error Buddy, he kept giving me an error when I used an iframe, so in order for me to keep working without the error, I used-->
 <html>
     <head>
         <meta charset="utf-8">
         <title>Lemon Delight.Order</title>
     </head>
     <style>
+        #REUSABLE-CSS {}
+        .clear {
+            color: rgba(0, 0, 0, 0);
+        }
+        
+        .break-lines {
+            position: absolute;
+            left: 0px;
+            width: 100%;
+            margin-top: 10px;
+            border: 1px solid black;
+            padding: 0px;
+        }
         
         .openSideMenu {
             border: 1px solid  black;
@@ -30,7 +44,7 @@
             right: 0%;
             height: 100%;
             width: 20%;
-            background-color: rgba(0, 0, 0, 1);
+            background-color: rgba(224, 62, 224, 0.75);
             z-index: 1;
             display: none;
         }
@@ -59,6 +73,32 @@
             right: 50px;
         }
         
+        .menu {
+            background-color: rgba(55, 234, 250);
+            width: 537px;
+            height: 100px;
+            overflow-y: auto;
+            overflow-x: hidden;
+            border: solid;
+            border-color: yellow;
+        }
+        
+        .menu td{
+            border: 1px solid green;
+        }
+        
+        .scroll-note {
+            position: relative;
+            top: -15px;
+            left: 290px;
+        }
+        
+        .menu-title {
+            color: rgba(207, 204, 0);
+            position: relative;
+            bottom: 60px;
+        }
+        
         .questions-link {
             font-family: "arial", monospace;
             font-size: 30px;
@@ -82,7 +122,7 @@
                 <a href = "https://mimicoctopus1.github.io/lemondelight">Lemon Delight</a>
             </h2>
             <h2 class = "questions-link">
-                <a href = "#questions">?</a>
+                <a href = "https://mimicoctopus1.github.io/lemondelight/#questions">?</a>
             </h2>
             <h2 class = "order-link">
                 <a href = "https://mimicoctopus1.github.io/lemondelight.order/">
@@ -103,20 +143,376 @@
             Estimated Wait Time: <span class = "wait-time">Loading...</span><br><span class = "wait-time">Loading...</span><span class = "wait-time"> Loading...</span>
         </h1>
         <h3>The bar below shows the Estimated Wait Time in the range of 0 to <span class = "max-wait-time">20</span> minutes.</h3>
-        <p>Note that all the time information on this page was last checked as of when this page was opened. If not <a href = "https://mimicoctopus1.github.io/lemondelight.order/">reload</a>ed, this page may result in false information.</p>
+        <p>Note that all the time information on this page was last checked as of when this page was opened. If not <a href = "https://mimicoctopus1.github.io/lemondelight.order/">reload</a>ed, this page may display false information.</p>
         <meter min = "0" max = "20" high = "15" low = "5" optimum = "0" value = "0" class = "wait-bar"></meter>
         <div class = "message"></div>
+        <div class = "break-lines">
+        </div><!--Break Line-->
         <h1>
-            Please don't Order by messaging<br>lemondelight@gmail.com<br>
+            Please order by messaging<br>lemondelightstand@gmail.com<br>or by using the the Google Form below. PLEASE DON'T DO BOTH!
         </h1>
+        
+        
+        <div id = "form" class = "iframe"></div>
+        <div class = "break-lines"></div><!--Break Line-->
+        <br>
+        <div class = "menu">
+        <p class = "scroll-note"> Scroll down inside this box for more.</p>
+    <h1 class = "menu-title">Everyday Menu</h1><!--Menu Label-->
+        <p>
+            **price and sugar(in cups)
+        </p>
+        <table>
+            <thead style = "background-color: rgba(0, 255, 30);">
+                <tr>
+                    <td>
+                         Name
+                        <span class = "clear">-----------</span>
+                    </td>
+                    <td>
+                        Small**
+                        <span class = "clear">-----------</span>
+                    </td>
+                    <td>
+                        Medium**
+                        <span class = "clear">-----------</span>
+                    </td>
+                    <td>
+                        Large**
+                        <span class = "clear">-----------</span>
+                    </td>
+                </tr>
+        </thead><!--Head-->
+            <tbody>
+                <tr>
+                    <td>
+                        Original
+                    </td>
+                    <td>
+                        <ul>
+                            <li>
+                                $1
+                            </li>
+                            <li>
+                                1/12
+                            </li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li>
+                                $2
+                            </li>
+                            <li>
+                                1/8
+                            </li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li>
+                                $3
+                            </li>
+                            <li>
+                                1/6
+                            </li>
+                        </ul>
+                    </td>
+                </tr><!--Original-->
+                <tr>
+                    <td>
+                        Strawberry Lychee
+                    </td>
+                    <td>
+                        <ul>
+                            <li>
+                                $1
+                            </li>
+                            <li>
+                                SECRET
+                            </li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li>
+                                $2
+                            </li>
+                            <li>
+                                SECRET
+                            </li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li>
+                                $3
+                            </li>
+                            <li>
+                                SECRET
+                            </li>
+                        </ul>
+                    </td>
+                </tr><!--Strawberry Lychee-->
+                <tr>
+                    <td>
+                        Lychee
+                    </td>
+                    <td>
+                        <ul>
+                            <li>
+                                $1
+                            </li>
+                            <li>
+                                SECRET
+                            </li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li>
+                                $2
+                            </li>
+                            <li>
+                                SECRET
+                            </li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li>
+                                $3
+                            </li>
+                            <li>
+                                SECRET
+                            </li>
+                        </ul>
+                    </td>
+                </tr><!--Lychee-->
+                <tr>
+                    <td>
+                        Strawberry
+                    </td>
+                    <td>
+                        <ul>
+                            <li>
+                                $1
+                            </li>
+                            <li>
+                                SECRET
+                            </li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li>
+                                $2
+                            </li>
+                            <li>
+                                SECRET
+                            </li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li>
+                                $3
+                            </li>
+                            <li>
+                                SECRET
+                            </li>
+                        </ul>
+                    </td>
+                </tr><!--Strawberry-->
+                <tr>
+                    <td>
+                        Cucumber Mint
+                    </td>
+                    <td>
+                        <ul>
+                            <li>
+                                $1
+                            </li>
+                            <li>
+                                SECRET
+                            </li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li>
+                                $2
+                            </li>
+                            <li>
+                                SECRET
+                            </li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li>
+                                $3
+                            </li>
+                            <li>
+                                SECRET
+                            </li>
+                        </ul>
+                    </td>
+                </tr><!--Cucumber Mint-->
+                <tr>
+                    <td>
+                        Citrus Combo <em>(Lemon, Lime, Grapefruit, and Orange Juice)</em>
+                    </td>
+                    <td>
+                        <ul>
+                            <li>
+                                $1
+                            </li>
+                            <li>
+                                SECRET
+                            </li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li>
+                                $2
+                            </li>
+                            <li>
+                                SECRET
+                            </li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li>
+                                $3
+                            </li>
+                            <li>
+                                SECRET
+                            </li>
+                        </ul>
+                    </td>
+                </tr><!--Citrus Combo-->
+                <tr>
+                    <td>
+                        Lemon Cake
+                    </td>
+                    <td>
+                        <ul>
+                            <li>
+                                $1 (per slice)
+                            </li>
+                            <li>
+                                SECRET
+                            </li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li>
+                                
+                            </li>
+                            <li>
+                                
+                            </li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li>
+                                
+                            </li>
+                            <li>
+                                
+                            </li>
+                        </ul>
+                    </td>
+                </tr><!--Lemon Cake-->
+                <tr>
+                    <td>
+                        Fresh Squeezed Lemon Salad
+                    </td>
+                    <td>
+                        <ul>
+                            <li>
+                                $3
+                            </li>
+                            <li>
+                                SECRET
+                            </li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li>
+                                $4
+                            </li>
+                            <li>
+                                SECRET
+                            </li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li>
+                                $5
+                            </li>
+                            <li>
+                                SECRET
+                            </li>
+                        </ul>
+                    </td>
+                </tr><!--Fresh Squeezed Lemon Salad-->
+                <tr>
+                    <td>
+                        Lemon Cupcakes
+                    </td>
+                    <td>
+                        <ul>
+                            <li>
+                                $1 (Single)
+                            </li>
+                            <li>
+                                SECRET
+                            </li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li>
+                                $6 (Half Dozen)
+                            </li>
+                            <li>
+                                SECRET
+                            </li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li>
+                                $6 (1 Dozen)
+                            </li>
+                            <li>
+                                SECRET
+                            </li>
+                        </ul>
+                    </td>
+                </tr><!--Lemon Cupcakes-->
+            </tbody><!--Body-->
+        </table><!--Table-->
+        </div> <!--The Menu-->
+        
+        
         
         
         </div>
         <script>
-            var lemonDelightIsBroken = "false";
+            var lemonDelightIsBroken = false;
             var message = document.getElementsByClassName("message")[0];
             var wait_meter = document.getElementsByClassName("wait-time");
             var waitBar = document.getElementsByClassName("wait-bar")[0];
+            var iframe = document.getElementsByClassName("iframe")[0];
             var entirePage = document.getElementsByClassName("entirePage")[0];
             var peopleInLine = 0;
             var subtractedTime = 0;
@@ -147,7 +543,7 @@
             var timerUpdateBar = window.setInterval(updateBar, 100);
             calculateWaitTime();
             calculateWaitTimeInMin();
-            if(lemonDelightIsBroken === "true") {
+            if(lemonDelightIsBroken) {
                 entirePage.innerHTML = "<h1>Sorry. This page is having a problem. It will hopefully be fixed soon.</h1>";
             }
             var sideOpener = document.getElementsByClassName("openSideMenu")[0];
@@ -168,6 +564,8 @@
             }
             sideOpener.addEventListener("click", showSideMenu);
             sideCloser.addEventListener("click", hideSideMenu);
+            iframe.innerHTML = "Sorry. This form is not available."
+            iframe.innerHTML = '<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeuarK352AoMaIKSR-c8-CKRa457-swxqwN6dt2P5w5aqHFFg/viewform?embedded=true" width="400" height="400" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>';
         </script>
     </body>
 </html>
