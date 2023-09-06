@@ -2,7 +2,20 @@
 <!--If the iframe doesn't show and you're here on KA, it's okay. iframes aren't allowed, but I didn't really care because I'm just using KA for Oh Noes, autocomplete, and the quickly loading previews. Speaking of Error Buddy, he kept giving me an error when I used an iframe, so in order for me to keep working without the error, I used some JS to insert it after the HTML was laid out.-->
 <html>
     <head>
-        <script src="https://www.google.com/recaptcha/enterprise.js?render=6LcrNwEoAAAAADIzi0fgnwtdolDrAAKLa53_7yVk"></script><!--Not A Bot verification-->
+        <script src="https://www.google.com/recaptcha/enterprise.js?onload=onloadCallback&render=explicit"
+    async defer>
+ </script><!--Load reCAPTCHA resource-->
+        <script type="text/javascript">
+            var onloadCallback = function() {
+                //alert("grecaptcha is ready!");
+                var reCAPTCHADiv = document.querySelectorAll(".recaptcha")[0];
+                grecaptcha.enterprise.render(reCAPTCHADiv, {
+                    'sitekey': "6Lc8vgIoAAAAAIhQPl7OfY8oQ0gDW7R5xzF0eBUZ",
+                    'action': 'LOGIN',
+                    "theme": "light"
+                });
+            };
+        </script><!--Create onLoad callback-->
         <meta charset="utf-8">
         <title>Lemon Delight.Order</title>
     </head>
@@ -14,7 +27,7 @@
   gtag('js', new Date());
 
   gtag('config', 'G-1F2WYZ2BZL');
-</script></div><!-- Google tag (gtag.js) I know this won't work on KA, but it will on my Github page. I think.-->
+</script></div><!-- Google tag (gtag.js) NON-KA-->
     <style>
         #REUSABLE-CSS {}
         @font-face {
@@ -135,6 +148,7 @@
     </style>
     <body>
         <div class = "entirePage">
+        <div class = "recaptcha"></div>
         <div>
             <h2 id = "top" class = "menu-bar">
                 ______________________________________________________________________________________________________________________________________________________________
@@ -590,12 +604,14 @@
             }
             sideOpener.addEventListener("click", showSideMenu);
             sideCloser.addEventListener("click", hideSideMenu);
-            if(document.URL === "https://www.kasandbox.org/computer-programming/exec/webpage?lang=en&v=230720-1135-f0f62be3aa9e&host=www.khanacademy.org") {
-                iframe.innerHTML = "<div height = '50px' style = 'background-color: red;'>It seems you're on Khan Academy. Since iframes aren't allowed on KA, I've decided to get rid of this iframe. Sorry.</div>";
+            if(document.location == "https://www.kasandbox.org/computer-programming/exec/webpage?lang=en&v=230905-1530-e5f59f759bff&host=www.khanacademy.org") {
+                iframe.innerHTML = "<div height = '50px' style = 'background-color: red;'>It seems you're on Khan Academy. Since iframes aren't allowed on KA, I've decided to get rid of this iframe. Sorry. Instead, please order by the  form link above.</div>";
             } else {
                 iframe.innerHTML = '<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeuarK352AoMaIKSR-c8-CKRa457-swxqwN6dt2P5w5aqHFFg/viewform?embedded=true" width="640" height="1533" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>';
             }
-            window.resizeBy(-200, -200)
+            
+            
+            window.addEventListener("load", onloadCallback);
         </script>
     </body>
 </html>
