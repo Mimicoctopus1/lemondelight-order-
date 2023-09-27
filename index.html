@@ -2,6 +2,15 @@
 <!--If the iframe doesn't show and you're here on KA, it's okay. iframes aren't allowed, but I didn't really care because I'm just using KA for Oh Noes, autocomplete, and the quickly loading previews. Speaking of Error Buddy, he kept giving me an error when I used an iframe, so in order for me to keep working without the error, I used some JS to insert it after the HTML was laid out.-->
 <html>
     <head>
+        <!-- Google Tag Manager-->
+        <div>
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5V9NR7BV');</script>
+<!-- End Google Tag Manager --></div>
+        
         <script src="https://www.google.com/recaptcha/enterprise.js?onload=onloadCallback&render=explicit"
     async defer>
  </script><!--Load reCAPTCHA resource-->
@@ -17,15 +26,6 @@
         <meta charset="utf-8">
         <title>Lemon Delight.Order</title>
     </head>
-    <div><!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-1F2WYZ2BZL"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-1F2WYZ2BZL');
-</script></div><!-- Google tag (gtag.js) NON-KA-->
     <style>
         #REUSABLE-CSS {}
         @font-face {
@@ -145,6 +145,16 @@
         #GENERAL-CSSS {}
     </style>
     <body>
+        <!--Google Tag Manager (noscript)-->
+        <div>
+        <div class = "googleTagIframe"></div>
+        <script>
+            var googleTagIframe = document.querySelectorAll(".googleTagIframe")[0];
+            googleTagIframe.innerHTML = '<!-- Google Tag Manager (noscript) --> <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5V9NR7BV" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>';
+        </script>
+            
+        </div>
+        
         <div class = "entirePage">
         <div>
             <h2 id = "top" class = "menu-bar">
